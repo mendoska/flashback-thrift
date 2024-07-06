@@ -83,11 +83,14 @@ function FeaturedCollection({collection}) {
       className="featured-collection"
       to={`/collections/${collection.handle}`}
     >
-      {image && (
+      {/* removing image "Featured" is a hyperlink */}
+      
+      {/* {image && (
         <div className="featured-collection-image">
           <Image data={image} sizes="100vw" />
         </div>
-      )}
+      )} */}
+
       <h1>{collection.title}</h1>
     </Link>
   );
