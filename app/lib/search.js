@@ -3,7 +3,6 @@
  *     | SearchProductFragment
  *     | PredictiveProductFragment
  *     | PredictiveCollectionFragment
- *     | PredictiveArticleFragment
  *     | PredictivePageFragment} resource
  * @param {string} [params]
  */
@@ -24,4 +23,3 @@ export function applyTrackingParams(resource, params) {
 /** @typedef {import('storefrontapi.generated').PredictiveProductFragment} PredictiveProductFragment */
 /** @typedef {import('storefrontapi.generated').PredictiveCollectionFragment} PredictiveCollectionFragment */
 /** @typedef {import('storefrontapi.generated').PredictivePageFragment} PredictivePageFragment */
-/** @typedef {import('storefrontapi.generated').PredictiveArticleFragment} PredictiveArticleFragment */

@@ -86,16 +86,6 @@ export function SearchResults({results, searchTerm}) {
             ) : null;
           }
 
-          if (resourceResults.nodes[0]?.__typename === 'Article') {
-            const articleResults = resourceResults;
-            return resourceResults.nodes.length ? (
-              <SearchResultArticleGrid
-                key="articles"
-                articles={articleResults}
-              />
-            ) : null;
-          }
-
           return null;
         })}
     </div>
@@ -177,27 +167,6 @@ function SearchResultPageGrid({pages}) {
           <div className="search-results-item" key={page.id}>
             <Link prefetch="intent" to={`/pages/${page.handle}`}>
               {page.title}
-            </Link>
-          </div>
-        ))}
-      </div>
-      <br />
-    </div>
-  );
-}
-
-/**
- * @param {Pick<SearchQuery, 'articles'>}
- */
-function SearchResultArticleGrid({articles}) {
-  return (
-    <div className="search-result">
-      <h2>Articles</h2>
-      <div>
-        {articles?.nodes?.map((article) => (
-          <div className="search-results-item" key={article.id}>
-            <Link prefetch="intent" to={`/blogs/${article.handle}`}>
-              {article.title}
             </Link>
           </div>
         ))}
@@ -443,7 +412,6 @@ function pluralToSingularSearchType(type) {
 
 /**
  * @typedef {| PredictiveCollectionFragment['image']
- *   | PredictiveArticleFragment['image']
  *   | PredictiveProductFragment['variants']['nodes'][0]['image']} PredicticeSearchResultItemImage
  */
 /** @typedef {| PredictiveProductFragment['variants']['nodes'][0]['price']} PredictiveSearchResultItemPrice */
@@ -510,6 +478,5 @@ function pluralToSingularSearchType(type) {
 /** @typedef {import('@remix-run/react').FormProps} FormProps */
 /** @typedef {import('storefrontapi.generated').PredictiveProductFragment} PredictiveProductFragment */
 /** @typedef {import('storefrontapi.generated').PredictiveCollectionFragment} PredictiveCollectionFragment */
-/** @typedef {import('storefrontapi.generated').PredictiveArticleFragment} PredictiveArticleFragment */
 /** @typedef {import('storefrontapi.generated').SearchQuery} SearchQuery */
 /** @typedef {import('../routes/api.predictive-search').PredictiveSearchAPILoader} PredictiveSearchAPILoader */
