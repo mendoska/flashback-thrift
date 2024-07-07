@@ -7,7 +7,7 @@ import {Image, Money} from '@shopify/hydrogen';
  * @type {MetaFunction}
  */
 export const meta = () => {
-  return [{title: 'Hydrogen | Home'}];
+  return [{title: 'Flashback Thrift | Home'}];
 };
 
 /**
@@ -89,6 +89,7 @@ function FeaturedCollection({collection}) {
         <div className="featured-collection-image">
           <Image data={image} sizes="100vw" />
         </div>
+        
       )} */}
 
       <h1>{collection.title}</h1>
