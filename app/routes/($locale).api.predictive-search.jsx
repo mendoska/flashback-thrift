@@ -168,45 +168,10 @@ export function normalizePredictiveSearchResults(predictiveSearch, locale) {
       }),
     });
   }
-
-  if (predictiveSearch.articles.length) {
-    results.push({
-      type: 'articles',
-      items: predictiveSearch.articles.map((article) => {
-        totalResults++;
-        const trackingParams = applyTrackingParams(article);
-        return {
-          __typename: article.__typename,
-          handle: article.handle,
-          id: article.id,
-          image: article.image,
-          title: article.title,
-          url: `${localePrefix}/blogs/${article.blog.handle}/${article.handle}/${trackingParams}`,
-        };
-      }),
-    });
-  }
-
   return {results, totalResults};
 }
 
 const PREDICTIVE_SEARCH_QUERY = `#graphql
-  fragment PredictiveArticle on Article {
-    __typename
-    id
-    title
-    handle
-    blog {
-      handle
-    }
-    image {
-      url
-      altText
-      width
-      height
-    }
-    trackingParameters
-  }
   fragment PredictiveCollection on Collection {
     __typename
     id
@@ -269,9 +234,6 @@ const PREDICTIVE_SEARCH_QUERY = `#graphql
       query: $searchTerm,
       types: $types,
     ) {
-      articles {
-        ...PredictiveArticle
-      }
       collections {
         ...PredictiveCollection
       }
@@ -300,7 +262,6 @@ const PREDICTIVE_SEARCH_QUERY = `#graphql
 /** @typedef {import('@shopify/remix-oxygen').LoaderFunctionArgs} LoaderFunctionArgs */
 /** @typedef {import('~/components/Search').NormalizedPredictiveSearch} NormalizedPredictiveSearch */
 /** @typedef {import('~/components/Search').NormalizedPredictiveSearchResults} NormalizedPredictiveSearchResults */
-/** @typedef {import('storefrontapi.generated').PredictiveArticleFragment} PredictiveArticleFragment */
 /** @typedef {import('storefrontapi.generated').PredictiveCollectionFragment} PredictiveCollectionFragment */
 /** @typedef {import('storefrontapi.generated').PredictivePageFragment} PredictivePageFragment */
 /** @typedef {import('storefrontapi.generated').PredictiveProductFragment} PredictiveProductFragment */
