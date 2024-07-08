@@ -1,5 +1,5 @@
-July 6th 
+# July 6th 
 
-Created website with Hydrogen (React Framework from Shopify)
+### Created website with Hydrogen (React Framework from Shopify)
 
-Will log updates / issues / errors as time goes on
+### Will log updates / issues / errors as time goes on
