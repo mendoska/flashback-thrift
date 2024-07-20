@@ -43,6 +43,7 @@ export function HeaderMenu({
   viewport,
   publicStoreDomain,
 }) {
+  console.log("myMenu: ", menu)
   const className = `header-menu-${viewport}`;
 
   function closeAside(event) {

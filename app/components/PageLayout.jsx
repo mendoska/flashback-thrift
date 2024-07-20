@@ -20,7 +20,6 @@ export function PageLayout({
   isLoggedIn,
   publicStoreDomain,
 }) {
-  console.log("headerValue", header)
   return (
     <Aside.Provider>
       <CartAside cart={cart} />
