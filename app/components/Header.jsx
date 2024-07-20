@@ -6,7 +6,6 @@ import {useAside} from '~/components/Aside';
 /**
  * @param {HeaderProps}
  */
-// This is the flashback thrift logo
 export function Header({header, isLoggedIn, cart, publicStoreDomain}) {
   const {shop, menu} = header;
   return (
@@ -36,14 +35,12 @@ export function Header({header, isLoggedIn, cart, publicStoreDomain}) {
  *   publicStoreDomain: HeaderProps['publicStoreDomain'];
  * }}
  */
-// Header Menu is the home catalog content shit
 export function HeaderMenu({
   menu,
   primaryDomainUrl,
   viewport,
   publicStoreDomain,
 }) {
-  console.log("myMenu: ", menu)
   const className = `header-menu-${viewport}`;
 
   function closeAside(event) {

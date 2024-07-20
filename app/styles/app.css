@@ -187,7 +187,6 @@ button.reset:hover:not(:has(> *)) {
   @media (min-width: 45em) {
     display: flex;
     grid-gap: 1rem;
-    /* margin-left: 3rem; Remove this..?*/
   }
 }
 
