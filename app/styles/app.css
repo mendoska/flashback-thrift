@@ -147,6 +147,10 @@ button.reset:hover:not(:has(> *)) {
 * components/Header
 * --------------------------------------------------
 */
+.title {
+  font-size: 2rem;
+}
+
 .header {
   background: #fff;
   display: flex;

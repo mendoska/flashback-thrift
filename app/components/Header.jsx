@@ -11,8 +11,8 @@ export function Header({header, isLoggedIn, cart, publicStoreDomain}) {
   const {shop, menu} = header;
   return (
     <header className="header">
-      <NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
-        <strong>{"Flashback Thrift"}</strong>
+      <NavLink prefetch="intent" to="/" className="title">
+        {"Flashback Thrift"}
       </NavLink>
       <div className="inline-components">
         <HeaderMenu
