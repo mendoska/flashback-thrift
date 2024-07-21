@@ -10,16 +10,19 @@ export function Header({header, isLoggedIn, cart, publicStoreDomain}) {
   const {shop, menu} = header;
   return (
     <header className="header">
-      <NavLink prefetch="intent" to="/" style={activeLinkStyle} end>
-        <strong>{"Flashback Thrift"}</strong>
+      <NavLink prefetch="intent" to="/" className="title">
+        {"Flashback Thrift"}
       </NavLink>
-      <HeaderMenu
-        menu={menu}
-        viewport="desktop"
-        primaryDomainUrl={header.shop.primaryDomain.url}
-        publicStoreDomain={publicStoreDomain}
-      />
-      <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} />
+      <div className="inline-components">
+        <HeaderMenu
+          menu={menu}
+          viewport="desktop"
+          primaryDomainUrl={header.shop.primaryDomain.url}
+          publicStoreDomain={publicStoreDomain}
+        />
+        {/* Commented out below until i figure out how where to put login/cart icons */}
+        {/* <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} /> */}
+      </div>
     </header>
   );
 }
